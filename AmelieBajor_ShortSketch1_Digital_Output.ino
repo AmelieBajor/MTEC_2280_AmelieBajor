@@ -1,4 +1,4 @@
-//"YourName_SS1"
+//"AmelieBajor_SS1"
 
 const int ledPinWhite = 4;
 const int ledPinGreen = 5;
