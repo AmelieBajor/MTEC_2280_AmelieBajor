@@ -49,15 +49,7 @@ buttonState = !digitalRead(buttonPin); //flip logic due to input pullup
   Serial.printf("Button = %i _ Toggle = %i _ Falling = %i /n", buttonState, toggle, fallToggle);
 
 
-  if(buttonState && !lastButtonState){
-    toggle = !toggle;
-    
-  }
 
-  if (!buttonState && lastButtonState){
-    fallToggle = !fallToggle;
-    
-  }
 
 
 
