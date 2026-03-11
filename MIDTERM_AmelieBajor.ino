@@ -9,6 +9,11 @@ const int ledPinGREEN = pinArray[3];
 const int ledPinBLUE = pinArray[4];
 
 
+int lastTime = 0;
+int currentTime = 0;
+int timerInterval = 5;
+
+
 bool buttonState = 0;
 bool lastButtonState = 0;
 bool toggle = 0;
@@ -36,6 +41,7 @@ void loop() {
   Serial.println(adcVal); //potentiometer
 
   buttonState = !digitalRead(buttonPin); //Button
+  currentTime = millis();
 
   if (buttonState && !lastButtonState){
     toggle = !toggle;
@@ -50,14 +56,12 @@ void loop() {
   lastButtonState = buttonState;
 
 
-  for (int i = 0; i <= 255; i++){
+  for (int i = 0; i <= 255; i){
     analogWrite(ledPinBLUE, i);
     if (millis() > ms){
-
-      if (i > 255){
-      i = 0;
+      if (currentTime - lastTime >= timerInterval){
+        i++;
       }
-
     }
 
 
