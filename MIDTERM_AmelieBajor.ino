@@ -18,7 +18,7 @@ bool fallToggle = 0;
 
 
 
-int ms = 100;
+int ms = 1000;
 
 void setup() {
   Serial.begin(115200);
@@ -52,14 +52,14 @@ void loop() {
 
   for (int i = 0; i <= 255; i++){
     analogWrite(ledPinBLUE, i);
-    if (millis() > 100){
+    if (millis() > ms){
 
+      if (i > 255){
+      i = 0;
+      }
 
     }
 
-  if (i > 255){
-    i = 0;
-  }
 
 }
 
