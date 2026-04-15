@@ -37,7 +37,7 @@ function draw() {
    for (let i = 0; i < height; i++)
   {
     let c = map(i, 0, height, 0, 255);  //map i to 0-255 range for color
-    stroke(2/c, 2*c, c);    //change stroke color for each x position, red is scaled to 2x
+    stroke(2/c, 2*c, outByte);    //change stroke color for each x position, red is scaled to 2x
     line(0, i, width, i);  //draw vertical line for each x position
   }
 
